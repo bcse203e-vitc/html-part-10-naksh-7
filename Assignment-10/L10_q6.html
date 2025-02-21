@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4</title>
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            width: 95vw;
+            position:relative ;
+            overflow: hidden;
+        }
+        #content{
+            height: 500px;
+            width: 300px;
+            position: relative;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+        }
+        img{
+            height: 250px;
+            width: 400px;
+            position: absolute;
+            
+        }
+        #img1 {  
+            z-index: 1; 
+            left: 75px;
+            top: 190px;
+        }  
+        #img2 {  
+            z-index: 2;
+            right: 150px;
+            top: 200px
+             
+        }  
+        #img3 {  
+            z-index: 3; 
+            bottom: 200px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Using z-index to Stack Elements</h1>
+    <div id="container">
+        <div id="content">
+            <img src="images.jpg" id="img1" alt="img1" onclick="inc(this)">
+            <img src="download.jpg" id="img2" alt="img2" onclick="inc(this)">
+            <img src="download1.jpg" id="img3" alt="img3" onclick="inc(this)">
+        </div>
+    </div>
+    <script>
+        let maxz=3;
+        function inc(element){
+            element.style.zIndex = maxz+1;
+            maxz= maxz+1;
+        }
+    </script>
+</body>
+</html>
