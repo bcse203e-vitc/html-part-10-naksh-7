@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4</title>
+</head>
+<body>
+    <form >
+        <fieldset>
+            <legend>Multiplication Table</legend>
+            <label for="num">Enter number</label>
+            <input type="number" id="num" min="1" required>
+            <button onclick="submit1(event)">Generate Table</button>
+        </fieldset>
+    </form>
+    <div id="ans">
+
+    </div>
+    <script>
+        function submit1(event){
+            event.preventDefault();
+            const k = document.getElementById('num').value;
+            let t1 = document.createElement('table');
+            t1.border = "2px";
+            
+            
+            for(let rows=0;rows<11;rows++){
+                if(rows==0){
+                    let tr1 = document.createElement('tr');
+                    let td2 = document.createElement('td');
+                    let td1 = document.createElement('td');
+                    td1.textContent = "Multiplication";
+                    td2.textContent = "Result";
+                    tr1.appendChild(td1);
+                    tr1.appendChild(td2);
+                    t1.appendChild(tr1);
+                }
+                else{
+                    let r1 = document.createElement('tr');
+                    let c1 = document.createElement('td');
+                    let c2 = document.createElement('td');
+                    c1.textContent = k+" * "+(rows);
+                    c2.textContent = k*(rows);
+                    r1.appendChild(c1);
+                    r1.appendChild(c2);
+                    t1.appendChild(r1);
+                }
+            }
+            document.getElementById('ans').innerHTML = "";
+            document.getElementById('ans').appendChild(t1);
+        }
+    </script>
+</body>
+</html>

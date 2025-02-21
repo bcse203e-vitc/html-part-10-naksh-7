@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q7</title>
+</head>
+<body>
+    <h1>Textarea Controls</h1>
+    <textarea name="inp1" id="inp1" placeholder="Enter here" rows="10" cols="35" oninput="count()"></textarea>
+    <div id="count1">
+
+    </div>
+    <script>
+        function count(){
+            let str = document.getElementById('inp1').value
+            let s = str.split(" ");
+            let c1 = s.length;
+            document.getElementById('count1').innerHTML = "Count: "+ c1;
+        }
+    </script>
+</body>
+</html>

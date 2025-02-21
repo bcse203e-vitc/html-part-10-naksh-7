@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8</title>
+</head>
+<body>
+    <h1>Country-State Selection</h1>
+    <form>
+        <label for="country">Select Country:</label>
+        <select id="country" onchange="fill()">
+            <option value="">--Select Country--</option>
+            <option value="USA">USA</option>
+            <option value="India">India</option>
+            <option value="UK">UK</option>
+        </select>
+
+        <label for="state">Select State:</label>
+        <select id="state">
+            <option value="">--Select State--</option>
+        </select>
+    </form>
+
+    <script>
+        const stateopt = {
+            USA: ["California", "Texas", "New York"],
+            India: ["Tamil Nadu", "Maharashtra", "Karnataka"],
+            UK: ["England", "Scotland"]
+        };
+
+        function fill() {
+            let country1 = document.getElementById('country');
+            let state1 = document.getElementById('state');
+            state1.innerHTML = "";
+            let cans = country1.value;
+            let a = stateopt[cans];
+            for(let s=0;s<a.length;s++){
+                let op1 = document.createElement('option');
+                op1.value = a[s];
+                op1.textContent = a[s];
+                state1.appendChild(op1);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+    
+</head>
+<body>
+    <h1>Manipulating CSS with JS</h1>
+    <button id="dark" onclick="change1('black')">Dark mode</button>
+    <button id="light" onclick="change1('white')">Light mode</button>
+    <script>
+        function change1(s){
+            if(s=="black"){
+                document.body.style.background = s;
+                document.body.style.color = "white";
+                
+            }
+            else{
+                document.body.style.background = s;
+                document.body.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>

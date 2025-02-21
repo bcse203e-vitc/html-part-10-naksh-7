@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+    <script src="order.js"></script>
+</head>
+<body>
+    <h1>Pizza Order Form</h1>
+    <form id="form1">
+        <h3>Choose the size:</h3>
+        <input type="radio" id="small" name="size" value="Small">
+        <label for="small">Small</label><br>
+        <input type="radio" id="medium" name="size" value="Medium">
+        <label for="medium">Medium</label><br>
+        <input type="radio" id="large" name="size" value="Large">
+        <label for="large">Large</label><br>
+        <h3>Select toppings:</h3>
+        <input type="checkbox" id="cheese" name="toppings" value="Cheese">
+        <label for="cheese">Cheese</label><br>
+        <input type="checkbox" id="pepperoni" name="toppings" value="Pepperoni">
+        <label for="pepperoni">Pepperoni</label><br>
+        <input type="checkbox" id="mushrooms" name="toppings" value="Mushrooms">
+        <label for="mushrooms">Mushrooms</label><br>
+        <input type="checkbox" id="olives" name="toppings" value="Olives">
+        <label for="olives">Olives</label><br>
+
+        <button type="button" onclick="submit1()">Submit Order</button>
+    </form>
+
+    <h2>Order Summary:</h2>
+    <p id="sum"></p>
+    <script>
+        function submit1(){
+            let f1 = document.getElementById('form1');
+            let size = f1.elements['size'].value;
+            let top = Array.from(f1.elements['toppings']).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+            let summary = "Size of Pizza: "+ size+"<br>With toppings: "+ top.join(", ");
+            document.getElementById('sum').innerHTML= summary;
+        }    
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q10</title>
+</head>
+<body>
+    <h1>To do List</h1>
+    <label for="inp1">Enter the task</label>
+    <input type="text" id="inp1">
+    <button id="insert">Add</button>
+    <div id="container">
+        <h2>Tasks</h2>
+        <div id="content">
+
+        </div>
+    </div>
+    <script>
+        document.getElementById("insert").addEventListener('click',insert1);
+        function insert1(){
+            let a = document.getElementById('inp1').value;
+            let x = document.createElement('div');
+            x.className = "task"
+            let text1 = document.createElement('span');
+            text1.textContent = a;
+            let rembtn = document.createElement('button');
+            rembtn.textContent = "Remove";
+            rembtn.addEventListener('click', function() {
+                x.remove();
+            });
+            x.appendChild(text1);
+            x.appendChild(rembtn);
+            document.getElementById('content').appendChild(x);
+            document.getElementById('inp1') = "";
+        }
+
+    </script>
+</body>
+</html>
